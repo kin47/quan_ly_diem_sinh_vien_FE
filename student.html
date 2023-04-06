@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinh viên</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.3.0-web/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/admin_menu.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/student.css">
+    <link rel="stylesheet" href="./assets/css/add-student-form.css">
+    <link rel="stylesheet" href="./assets//css/pagination.css">
+    <link rel="icon" type="image/x-icon" href="./assets/images/ptit.png">
+</head>
+
+<body>
+    <div class="menu">
+        <div class="menu-phanTren">
+            <div class="tieuDe">
+                <img class="logo" src="./assets/images/ptit.png" alt="Logo PTIT">
+                <div class="tenTieuDe">Quản lý điểm sinh viên</div>
+            </div>
+            <div class="nganCach"></div>
+            <div class="taiKhoan">
+                <img src="./assets/images/avatar.png" alt="avatar" class="avatar">
+                <div class="tenTaiKhoan">Admin</div>
+            </div>
+            <div class="nganCach"></div>
+            <a class="menuMuc trangChuMuc" href="home.html">
+                <img src="./assets/images/home.png" alt="Trang chủ" class="icon-Muc">
+                <div class="menuMuc-tieuDe">Trang chủ</div>
+            </a>
+            <a class="menuMuc nhapDiemMuc" href="add_grade.html">
+                <img src="./assets/images/score.png" alt="Điểm" class="icon-Muc">
+                <div class="menuMuc-tieuDe">Nhập điểm</div>
+            </a>
+            <a class="menuMuc sinhVienMuc" href="student.html">
+                <img src="./assets/images/student.svg" alt="Sinh viên" class="icon-Muc">
+                <div class="menuMuc-tieuDe">Sinh viên</div>
+            </a>
+            <a class="menuMuc giangVienMuc" href="teacher.html">
+                <img src="./assets/images/teacher.png" alt="Giảng vien" class="icon-Muc">
+                <div class="menuMuc-tieuDe">Giảng viên</div>
+            </a>
+            <a class="menuMuc thongTinMuc" href="semester.html">
+                <img src="./assets/images/general_info.png" alt="Thông tin chung" class="icon-Muc">
+                <div class="menuMuc-tieuDe">Học kỳ</div>
+            </a>
+            <a class="menuMuc monHocMuc" href="subject.html">
+                <img src="./assets/images/subject.jpg" alt="Thông tin mon hoc" class="icon-Muc">
+                <div class="menuMuc-tieuDe">Thông tin môn học</div>
+            </a>
+            <a class="menuMuc khoaMuc" href="specialization.html">
+                <img src="./assets/images/school.png" alt="Khoa" class="icon-Muc">
+                <div class="menuMuc-tieuDe">Khoa chuyên môn</div>
+            </a>
+            <a class="menuMuc nguoiDungMuc" href="user.html">
+                <img src="./assets/images/user.png" alt="Người dùng" class="icon-Muc">
+                <div class="menuMuc-tieuDe">Người dùng</div>
+            </a>
+        </div>
+        <div class="menu-phanDuoi">
+            <div class="dongMenu">
+                <img src="./assets/images/menu.png" alt="Đăng xuất" class="icon-DangXuat">
+                <div class="dongMenu-tieuDe">Đóng menu</div>
+            </div>
+            <a href="#" class="dangXuat">
+                <img src="./assets/images/log-out.png" alt="Đăng xuất" class="icon-DangXuat">
+                <div class="dangXuat-tieuDe">Đăng xuất</div>
+            </a>
+        </div>
+    </div>
+    <div class="manHinhChinh">
+        <div class="dauTrang">
+            <h1 class="tieuDeTrang">Danh sách sinh viên</h1>
+            <button id="nut_them_SV" onclick="showModal('modal_sinh_vien')" class="nutThemSV js-nutThemSV"
+                type="button">
+                <span class="nutThemSV_tieuDe">Thêm sinh viên</span>
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </div>
+
+        <div class="khuVucTimKiem">
+            <div class="khuVucTimKiem-dau">
+                <div class="tieuDeTimKiem">Tìm kiếm sinh viên</div>
+            </div>
+            <div class="khuVucTimKiem-phanThan">
+                <div class="phanTimKiem">
+                    <input type="search" class="nhapTimKiem" placeholder="Nhập mã sinh viên">
+                    <input type="search" class="nhapTimKiem" placeholder="Nhập tên sinh viên">
+                </div>
+                <div class="timKiem-cacNut">
+                    <button class="nutTimKiem">
+                        <span class="nutTimKiem_tieuDe">Tìm</span>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    <button class="nutReset">
+                        <span class="nutReset_tieuDe">Reset</span>
+                        <i class="fa-solid fa-arrow-rotate-back"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="boc-bang">
+            <table class="danhSach">
+                <thead class="hang1">
+                    <th data-sort onclick="sortTable(0, this)" class="cot-maSV">Mã SV</th>
+                    <th data-sort onclick="sortName(this)" class="cot-tenSV">Họ và tên</th>
+                    <th data-sort onclick="sortTable(2, this)" class="cot-emailSV">Email</th>
+                    <th data-sort onclick="sortTable(3, this)" class="cot-ngaySinhSV">Ngày sinh</th>
+                    <th data-sort onclick="sortTable(4, this)" class="cot-gioiTinhSV">Giới tính</th>
+                    <th class="cot-sdtSV">Số điện thoại</th>
+                    <th data-sort onclick="sortTable(6, this)" class="cot-lopSV">Lớp hành chính</th>
+                    <th class="cot-ngayTao">Ngày tạo</th>
+                    <th class="cot-ngayTao">Ngày cập nhật</th>
+                    <th class="hanh-dong">Action</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>B20DCCN443</td>
+                        <td>Trần Quang Minh</td>
+                        <td>minhtq.b20cn443@stu.ptit.edu.vn</td>
+                        <td>04/07/2002</td>
+                        <td>Nam</td>
+                        <td>0986153247</td>
+                        <td>D20CQCN11-B</td>
+                        <td>06/04/2023 10:20:00</td>
+                        <td>06/04/2023 10:20:00</td>
+                        <td class="chucNang">
+                            <div class="hop-hanh-dong">
+                                <button class="sua hop-hanh-dong-nut" type="button">
+                                    <span class="sua_tieuDe">Sửa</span>
+                                    <i class="fa-solid fa-pencil sua_icon"></i>
+                                </button>
+                                <button class="xoa hop-hanh-dong-nut" type="button">
+                                    <span class="xoa_tieuDe">Xóa</span>
+                                    <i class="fa-solid fa-trash xoa_icon"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>B20DCCN037</td>
+                        <td>Trịnh Minh Tuấn</td>
+                        <td>tuantm.b20cn037@stu.ptit.edu.vn</td>
+                        <td>27/01/2002</td>
+                        <td>Nam</td>
+                        <td>0986153247</td>
+                        <td>D20CQCN11-B</td>
+                        <td>06/04/2023 10:20:00</td>
+                        <td>06/04/2023 10:20:00</td>
+                        <td class="chucNang">
+                            <div class="hop-hanh-dong">
+                                <button class="sua hop-hanh-dong-nut" type="button">
+                                    <span class="sua_tieuDe">Sửa</span>
+                                    <i class="fa-solid fa-pencil sua_icon"></i>
+                                </button>
+                                <button class="xoa hop-hanh-dong-nut" type="button">
+                                    <span class="xoa_tieuDe">Xóa</span>
+                                    <i class="fa-solid fa-trash xoa_icon"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>B20DCCN551</td>
+                        <td>Nguyễn Minh Quân</td>
+                        <td>quannm.b20cn551@stu.ptit.edu.vn</td>
+                        <td>21/01/2002</td>
+                        <td>Nam</td>
+                        <td>0986153247</td>
+                        <td>D20CQCN11-B</td>
+                        <td>06/04/2023 10:20:00</td>
+                        <td>06/04/2023 10:20:00</td>
+                        <td class="chucNang">
+                            <div class="hop-hanh-dong">
+                                <button class="sua hop-hanh-dong-nut" type="button">
+                                    <span class="sua_tieuDe">Sửa</span>
+                                    <i class="fa-solid fa-pencil sua_icon"></i>
+                                </button>
+                                <button class="xoa hop-hanh-dong-nut" type="button">
+                                    <span class="xoa_tieuDe">Xóa</span>
+                                    <i class="fa-solid fa-trash xoa_icon"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>B20DCCN575</td>
+                        <td>Lại Ngọc Sơn</td>
+                        <td>sonln.b20cn575@stu.ptit.edu.vn</td>
+                        <td>06/04/2001</td>
+                        <td>Nam</td>
+                        <td>0986153247</td>
+                        <td>D20CQCN11-B</td>
+                        <td>06/04/2023 10:20:00</td>
+                        <td>06/04/2023 10:20:00</td>
+                        <td class="chucNang">
+                            <div class="hop-hanh-dong">
+                                <button class="sua hop-hanh-dong-nut" type="button">
+                                    <span class="sua_tieuDe">Sửa</span>
+                                    <i class="fa-solid fa-pencil sua_icon"></i>
+                                </button>
+                                <button class="xoa hop-hanh-dong-nut" type="button">
+                                    <span class="xoa_tieuDe">Xóa</span>
+                                    <i class="fa-solid fa-trash xoa_icon"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>B20DCCN192</td>
+                        <td>Đào Xuân Đồng</td>
+                        <td>dongdx.b20cn443@stu.ptit.edu.vn</td>
+                        <td>24/10/2002</td>
+                        <td>Nam</td>
+                        <td>0986153247</td>
+                        <td>D20CQCN12-B</td>
+                        <td>06/04/2023 10:20:00</td>
+                        <td>06/04/2023 10:20:00</td>
+                        <td class="chucNang">
+                            <div class="hop-hanh-dong">
+                                <button class="sua hop-hanh-dong-nut" type="button">
+                                    <span class="sua_tieuDe">Sửa</span>
+                                    <i class="fa-solid fa-pencil sua_icon"></i>
+                                </button>
+                                <button class="xoa hop-hanh-dong-nut" type="button">
+                                    <span class="xoa_tieuDe">Xóa</span>
+                                    <i class="fa-solid fa-trash xoa_icon"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="phanTrang">
+            <ul></ul>
+        </div>
+    </div>
+    <div class="boc-modal" id="modal_sinh_vien">
+        <div class="modal-container js-modal-container">
+            <div class="modal-close js-modal-close" onclick="hideModal('modal_sinh_vien')">
+                <i class="ti-close"></i>
+            </div>
+            <!-- modal header -->
+            <header class="modal-header">
+                <i class="modal-heading-icon ti-user"></i>
+                Thêm sinh viên
+            </header>
+            <!-- modal body -->
+            <div class="modal-body">
+                <label for="" class="modal-label">
+                    Mã sinh viên
+                </label>
+                <input type="text" class="modal-input" placeholder="Nhập mã ...">
+
+                <label for="" class="modal-label">
+                    Tên sinh viên
+                </label>
+                <input type="text" class="modal-input" placeholder="Nhập tên ...">
+
+                <label for="" class="modal-label">
+                    Email
+                </label>
+                <input type="email" class="modal-input" placeholder="Điền email .. ">
+
+
+                <label for="" class="modal-label">
+                    Ngày sinh
+                </label>
+                <input type="date" class="modal-input">
+
+                <label for="" class="modal-label">
+                    Giới tính
+                </label>
+                <select class="modal-input" required>
+                    <option value="">Please select</option>
+                    <option value="Class A">Nam</option>
+                    <option value="Class B">Nữ</option>
+                </select>
+
+                <label for="" class="modal-label">
+                    Số điện thoại
+                </label>
+                <input type="text" class="modal-input" placeholder="Nhập số điện thoại ...">
+
+
+
+                <label for="" class="modal-label">
+                    Lớp hành chính
+                </label>
+                <select id="" class="modal-input" required>
+                    <option value="">Please select</option>
+                    <option value="Class A">Class A</option>
+                    <option value="Class B">Class B</option>
+                    <option value="Class C">Class C</option>
+                </select>
+            </div>
+            <!-- modal footer -->
+            <div class="modal-footer">
+                <button class="buy-btn">
+                    Thêm
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/student.js"></script>
+    <script src="./assets/js/pagination_student.js"></script>
+    <script src="./assets/js/add_student.js"></script>
+    <script src="./assets/js/text_error.js"></script>
+</body>
+
+</html>

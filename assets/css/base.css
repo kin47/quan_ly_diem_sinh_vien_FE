@@ -1,0 +1,21 @@
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --red-color: #cc0d00;
+    --menu-color: #001529;
+    --hover-color: rgba(255, 255, 255, 0.3);
+    --text-color: #808080;
+    --main-screen: #f8f9fa;
+}
+
+* {
+    box-sizing: inherit;
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
