@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.3.0-web/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap"
         rel="stylesheet">
-        <link rel="stylesheet" href="./assets/css/admin_menu.css">
+    <link rel="stylesheet" href="../../../assets/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="./assets/css/admin_menu.css">
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/teacher.css">
     <link rel="stylesheet" href="./assets/css/add-student-form.css">
@@ -81,7 +82,7 @@
         <h1 class="tieuDeTrang">Danh sách giảng viên</h1>
         <div class="themVaTimKiem">
             <!-- nut them sinh vien -->
-            <button id="nut_them_GV" onclick="showModal('modal_sinh_vien')" class="nutThemGV js-nutThemGV"
+            <button id="nut_them_GV" onclick="showModal('modal_giang_vien')" class="nutThemGV js-nutThemGV"
                 type="button">
                 <span class="nutThemGV_tieuDe">Thêm giảng viên</span>
                 <i class="fa-solid fa-plus"></i>
@@ -98,12 +99,14 @@
         <div class="boc-bang">
             <table class="danhSach">
                 <thead class="hang1">
-                    <th data-sort onclick="sortTable(0, this)">Mã GV</th>
-                    <th data-sort onclick="sortName(this)">Họ và tên</th>
-                    <th>Số điện thoại</th>
-                    <th>Email</th>
-                    <th data-sort onclick="sortTable(4, this)">Giới tính</th>
-                    <th data-sort onclick="sortName(this)">Khoa</th>
+                    <th data-sort onclick="sortTable(0, this)" class="cot-maGV">Mã GV</th>
+                    <th data-sort onclick="sortName(this)" class="cot-tenGV">Họ và tên</th>
+                    <th class="cot-sdtGV">Số điện thoại</th>
+                    <th class="cot-emailGV">Email</th>
+                    <th data-sort onclick="sortTable(4, this)" class="cot-gioiTinhGV">Giới tính</th>
+                    <th data-sort onclick="sortName(this)" class="cot-khoaGV">Khoa</th>
+                    <th class="cot-ngayTao">Ngày tạo</th>
+                    <th class="cot-ngayTao">Ngày cập nhật</th>
                     <th class="hanh-dong">Action</th>
                 </thead>
                 <tbody>
@@ -111,9 +114,77 @@
                         <td>TRR1</td>
                         <td>Nguyễn Tất Thắng</td>
                         <td>0986153247</td>
-                        <td>drnguyentt@stu.ptit.edu.vn</td>
+                        <td>drnguyentt@ptit.edu.vn</td>
                         <td>Nam</td>
                         <td>Công nghệ thông tin</td>
+                        <td>06/04/2023 10:20:00</td>
+                        <td>06/04/2023 10:20:00</td>
+                        <td class="chucNang">
+                            <div class="hop-hanh-dong">
+                                <button class="sua hop-hanh-dong-nut" type="button">
+                                    <span class="sua_tieuDe">Sửa</span>
+                                    <i class="fa-solid fa-pencil sua_icon"></i>
+                                </button>
+                                <button class="xoa hop-hanh-dong-nut" type="button">
+                                    <span class="xoa_tieuDe">Xóa</span>
+                                    <i class="fa-solid fa-trash xoa_icon"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>OOP1</td>
+                        <td>Trịnh Thị Vân Anh</td>
+                        <td>0986153247</td>
+                        <td>vanhcodekoclean@ptit.edu.vn</td>
+                        <td>Nữ</td>
+                        <td>Công nghệ thông tin</td>
+                        <td>06/04/2023 10:20:00</td>
+                        <td>06/04/2023 10:20:00</td>
+                        <td class="chucNang">
+                            <div class="hop-hanh-dong">
+                                <button class="sua hop-hanh-dong-nut" type="button">
+                                    <span class="sua_tieuDe">Sửa</span>
+                                    <i class="fa-solid fa-pencil sua_icon"></i>
+                                </button>
+                                <button class="xoa hop-hanh-dong-nut" type="button">
+                                    <span class="xoa_tieuDe">Xóa</span>
+                                    <i class="fa-solid fa-trash xoa_icon"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>DSA11</td>
+                        <td>Nguyễn Mạnh Sơn</td>
+                        <td>0986153247</td>
+                        <td>sonowflake@ptit.edu.vn</td>
+                        <td>Nam</td>
+                        <td>Công nghệ thông tin</td>
+                        <td>06/04/2023 10:20:00</td>
+                        <td>06/04/2023 10:20:00</td>
+                        <td class="chucNang">
+                            <div class="hop-hanh-dong">
+                                <button class="sua hop-hanh-dong-nut" type="button">
+                                    <span class="sua_tieuDe">Sửa</span>
+                                    <i class="fa-solid fa-pencil sua_icon"></i>
+                                </button>
+                                <button class="xoa hop-hanh-dong-nut" type="button">
+                                    <span class="xoa_tieuDe">Xóa</span>
+                                    <i class="fa-solid fa-trash xoa_icon"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>KNTT1</td>
+                        <td>Lê Vũ Điệp</td>
+                        <td>0986153247</td>
+                        <td>dieplv@ptit.edu.vn</td>
+                        <td>Nữ</td>
+                        <td>Truyền thông đa phương tiện</td>
+                        <td>06/04/2023 10:20:00</td>
+                        <td>06/04/2023 10:20:00</td>
                         <td class="chucNang">
                             <div class="hop-hanh-dong">
                                 <button class="sua hop-hanh-dong-nut" type="button">
@@ -134,10 +205,10 @@
             <ul></ul>
         </div>
     </div>
-    <div class="boc-modal" id="modal_sinh_vien">
+    <div class="boc-modal" id="modal_giang_vien" >
         <div class="modal-container js-modal-container">
-            <div class="modal-close js-modal-close" onclick="hideModal('modal_sinh_vien')">
-                <i class="ti-close"></i>
+            <div class="modal-close js-modal-close" onclick="hideModal('modal_giang_vien')">
+                <i id ="close-btn" class="ti-close"></i>
             </div>
             <!-- modal header -->
             <header class="modal-header">
@@ -146,61 +217,55 @@
             </header>
             <!-- modal body -->
             <div class="modal-body">
-                <label for="" class="modal-label">
-                    Mã giảng viên
-                </label>
-                <input type="text" class="modal-input" placeholder="Nhập mã ...">
-
-                <label for="" class="modal-label">
-                    Tên giảng viên
-                </label>
-                <input type="text" class="modal-input" placeholder="Nhập tên ...">
-
-                <label for="" class="modal-label">
-                    Email
-                </label>
-                <input type="email" class="modal-input" placeholder="Điền email .. ">
-
-
-                <label for="" class="modal-label">
-                    Ngày sinh
-                </label>
-                <input type="date" class="modal-input">
-
-                <label for="" class="modal-label">
-                    Giới tính
-                </label>
-                <select class="modal-input" required>
+                <label for="" class="modal-label">Mã giảng viên</label>
+                <input id ="ma" type="text" class="modal-input" placeholder="Nhập mã ...">
+                <div id="ma-error" class="error-message">Làm ơn nhập vào </div>
+    
+    
+    
+                <label for="" class="modal-label">Tên giảng viên</label>
+                <input id = "ten" type="text" class="modal-input" placeholder="Nhập tên ...">
+                <div id="ten-error" class="error-message">Làm ơn nhập vào </div>
+    
+    
+                <label for="" class="modal-label">Email</label>
+                <input id="email" type="email" class="modal-input" placeholder="Điền email .. ">
+                <div id="email-error" class="error-message">Làm ơn nhập vào </div>
+    
+    
+                <label for="" class="modal-label">Giới tính</label>
+                <select id = "gioi-tinh" class="modal-input" required>
                     <option value="">Please select</option>
                     <option value="Class A">Nam</option>
                     <option value="Class B">Nữ</option>
                 </select>
-
-                <label for="" class="modal-label">
-                    Số điện thoại
-                </label>
-                <input type="text" class="modal-input" placeholder="Nhập số điện thoại ...">
-
-
-
-                <label for="" class="modal-label">
-                    Lớp hành chính
-                </label>
-                <select id="" class="modal-input" required>
+                <div id="gioi-tinh-error" class="error-message">Làm ơn chọn giới tính </div>
+    
+    
+                <label for="" class="modal-label">Số điện thoại</label>
+                <input id="sdt" type="text" class="modal-input" placeholder="Nhập số điện thoại ...">
+                <div id="sdt-error" class="error-message">Làm ơn nhập vào</div>
+    
+    
+    
+    
+                <label for="" class="modal-label">Mã khoa </label>
+                <select id="ma-khoa" class="modal-input" required>
                     <option value="">Please select</option>
                     <option value="Class A">Class A</option>
                     <option value="Class B">Class B</option>
                     <option value="Class C">Class C</option>
                 </select>
+                <div id="ma-khoa-error" class="error-message">Làm ơn chọn mã khoa</div>
+    
             </div>
             <!-- modal footer -->
             <div class="modal-footer">
-                <button class="buy-btn">
-                    Thêm
-                </button>
+                <button class="buy-btn" type="submit" onclick="validateForm()">Thêm</button>
             </div>
         </div>
     </div>
+
     <script src="./assets/js/teacher.js"></script>
     <script src="./assets/js/pagination_teacher.js"></script>
     <script src="./assets/js/add_teacher.js"></script>

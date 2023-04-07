@@ -24,13 +24,6 @@ h1 {
     margin: 10px 20px;
 }
 
-.boc-bang {
-    width: 74vw;
-    overflow-x: auto;
-    padding: 10px 10px 15px 10px;
-    margin-left: 10px;
-}
-
 .nutThemMH,
 .nutTimKiem {
     background-color: var(--red-color);
@@ -85,7 +78,7 @@ h1 {
 
 .cot-maMH,
 .cot-TC {
-    width: 170px;
+    width: 120px;
     text-align: center;
 }
 
@@ -95,6 +88,17 @@ h1 {
 
 .cot-khoa {
     width: 250px;
+}
+
+.cot-ngayTao {
+    width: 200px;
+}
+
+.boc-bang {
+    width: 74vw;
+    overflow-x: auto;
+    padding: 10px 10px 15px 10px;
+    margin-left: 10px;
 }
 
 .danhSach {
