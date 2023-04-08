@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinh viên</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.3.0-web/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../../assets/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="./assets/css/admin_menu.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/semester.css">
+    <link rel="stylesheet" href="./assets/css/add-student-form.css">
+    <link rel="stylesheet" href="./assets/css/pagination.css">
+    <link rel="icon" type="image/x-icon" href="./assets/images/ptit.png">
+</head>
+
+<body>
+    <div class="menu">
+        <div class="menu-phanTren">
+            <div class="tieuDe">
+                <img class="logo" src="./assets/images/ptit.png" alt="Logo PTIT">
+                <div class="tenTieuDe">Quản lý điểm sinh viên</div>
+            </div>
+            <div class="nganCach"></div>
+            <div class="taiKhoan">
+                <img src="./assets/images/avatar.png" alt="avatar" class="avatar">
+                <div class="tenTaiKhoan">Admin</div>
+            </div>
+            <div class="nganCach"></div>
+            <a class="menuMuc trangChuMuc" href="home.html">
+                <img src="./assets/images/home.png" alt="Trang chủ" class="icon-Muc">
+                <div class="menuMuc-tieuDe">Trang chủ</div>
+            </a>
+            <a class="menuMuc nhapDiemMuc" href="add_grade.html">
+                <img src="./assets/images/score.png" alt="Điểm" class="icon-Muc">
+                <div class="menuMuc-tieuDe">Nhập điểm</div>
+            </a>
+            <a class="menuMuc sinhVienMuc" href="student.html">
+                <img src="./assets/images/student.svg" alt="Sinh viên" class="icon-Muc">
+                <div class="menuMuc-tieuDe">Sinh viên</div>
+            </a>
+            <a class="menuMuc giangVienMuc" href="teacher.html">
+                <img src="./assets/images/teacher.png" alt="Giảng vien" class="icon-Muc">
+                <div class="menuMuc-tieuDe">Giảng viên</div>
+            </a>
+            <a class="menuMuc hocKyMuc" href="semester.html">
+                <img src="./assets/images/general_info.png" alt="Học kỳ" class="icon-Muc">
+                <div class="menuMuc-tieuDe">Học kỳ</div>
+            </a>
+            <a class="menuMuc monHocMuc" href="subject.html">
+                <img src="./assets/images/subject.jpg" alt="Thông tin mon hoc" class="icon-Muc">
+                <div class="menuMuc-tieuDe">Thông tin môn học</div>
+            </a>
+            <a class="menuMuc khoaMuc" href="specialization.html">
+                <img src="./assets/images/school.png" alt="Khoa" class="icon-Muc">
+                <div class="menuMuc-tieuDe">Khoa chuyên môn</div>
+            </a>
+            <a class="menuMuc nguoiDungMuc" href="user.html">
+                <img src="./assets/images/user.png" alt="Người dùng" class="icon-Muc">
+                <div class="menuMuc-tieuDe">Người dùng</div>
+            </a>
+        </div>
+        <div class="menu-phanDuoi">
+            <div class="dongMenuMuc" onclick="closeMenu()">
+                <img src="./assets/images/menu.png" alt="Đóng menu" class="icon-Muc">
+                <div class="dongMenu-tieuDe">Đóng menu</div>
+            </div>
+            <a href="#" class="dangXuat">
+                <img src="./assets/images/log-out.png" alt="Đăng xuất" class="icon-DangXuat">
+                <div class="dangXuat-tieuDe">Đăng xuất</div>
+            </a>
+        </div>
+    </div>
+    <div class="manHinhChinh">
+        <div class="dauTrang">
+            <h1 class="tieuDeTrang">Các học kỳ</h1>
+            <button id="nut_them_HK" onclick="showModal('modal_hoc_ky')" class="nutThemHK js-nutThemHK"
+                type="button">
+                <span class="nutThemHK_tieuDe">Thêm học kỳ</span>
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </div>
+
+        <div class="boc-bang">
+            <table class="danhSach">
+                <thead class="hang1">
+                    <th data-sort onclick="sortTable(0, this)" class="cot-maHK">Mã học kỳ</th>
+                    <th data-sort onclick="sortName(this)" class="cot-tenHK">Tên học kỳ</th>
+                    <th class="cot-ngayTao">Ngày tạo</th>
+                    <th class="cot-ngayTao">Ngày cập nhật</th>
+                    <th class="hanh-dong">Action</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>20231</td>
+                        <td>Kỳ xuân 2023</td>
+                        <td>06/04/2023 10:20:00</td>
+                        <td>06/04/2023 10:20:00</td>
+                        <td class="chucNang">
+                            <button class="sua hop-hanh-dong-nut" type="button">
+                                <span class="sua_tieuDe">Sửa</span>
+                                <i class="fa-solid fa-pencil sua_icon"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="phanTrang">
+            <ul></ul>
+        </div>
+    </div>
+    <div class="boc-modal" id="modal_sinh_vien">
+        <div class="modal-container js-modal-container">
+            <div class="modal-close js-modal-close" onclick="hideModal('modal_sinh_vien')">
+                <i id="close-btn" class="ti-close"></i>
+            </div>
+            <!-- modal header -->
+            <header class="modal-header">
+                <i class="modal-heading-icon ti-user"></i>
+                Thêm sinh viên
+            </header>
+            <!-- modal body -->
+            <div class="modal-body">
+                <label for="" class="modal-label">Mã sinh viên</label>
+                <input id="ma" type="text" class="modal-input" placeholder="Nhập mã ...">
+                <div id="ma-error" class="error-message">Làm ơn nhập vào </div>
+
+                <label for="" class="modal-label">Tên sinh viên</label>
+                <input id="ten" type="text" class="modal-input" placeholder="Nhập tên ...">
+                <div id="ten-error" class="error-message">Làm ơn nhập vào </div>
+
+
+                <label for="" class="modal-label">Email</label>
+                <input id="email" type="email" class="modal-input" placeholder="Điền email .. ">
+                <div id="email-error" class="error-message">Làm ơn nhập vào </div>
+
+
+                <label for="" class="modal-label">Ngày sinh</label>
+                <input id="dob" type="date" class="modal-input">
+                <div id="dob-error" class="error-message">Làm ơn nhập vào </div>
+
+
+                <label for="" class="modal-label">Giới tính</label>
+                <select id="gioi-tinh" class="modal-input" required>
+                    <option value="">Please select</option>
+                    <option value="Class A">Nam</option>
+                    <option value="Class B">Nữ</option>
+                </select>
+                <div id="gioi-tinh-error" class="error-message">Làm ơn chọn giới tính </div>
+
+
+                <label for="" class="modal-label">Số điện thoại</label>
+                <input id="sdt" type="text" class="modal-input" placeholder="Nhập số điện thoại ...">
+                <div id="sdt-error" class="error-message">Làm ơn nhập vào</div>
+
+
+
+                <label for="" class="modal-label">Lớp hành chính</label>
+                <select id="ma-khoa" class="modal-input" required>
+                    <option value="">Please select</option>
+                    <option value="Class A">Class A</option>
+                    <option value="Class B">Class B</option>
+                    <option value="Class C">Class C</option>
+                </select>
+                <div id="ma-khoa-error" class="error-message">Làm ơn chọn mã lớp</div>
+
+            </div>
+            <!-- modal footer -->
+            <div class="modal-footer">
+                <button class="buy-btn" type="submit" onclick="validateForm()">
+                    Thêm
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/menu.js"></script>
+    <script src="./assets/js/student.js"></script>
+    <script src="./assets/js/pagination_student.js"></script>
+    <script src="./assets/js/add_student.js"></script>
+    <script src="./assets/js/text_error.js"></script>
+</body>
+
+</html>
