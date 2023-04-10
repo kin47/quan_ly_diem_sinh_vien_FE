@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.3.0-web/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap"
+        rel="stylesheet">
+    <title>Trang đăng nhập</title>
+    <link rel="stylesheet" href="./assets/css/login.css">
+    <link rel="icon" type="image/x-icon" href=".././assets/images/ptit.png">
+</head>
+<body>
+    <img class="anh-ben-trai" src="https://code.ptit.edu.vn/2020/images/bg_left.png" alt="Ảnh bên trái">
+    <img class="anh-ben-phai" src="https://code.ptit.edu.vn/2020/images/bg_right.png" alt="Ảnh bên phải">
+    <form action="/auth/login" method="post">
+        <div class="phan-tieuDe">
+            <img src="./assets/images/ptit.png" alt="" class="logo-ptit">
+            <div class="dangNhap-tieuDe">Đăng nhập</div>
+        </div>
+        <div class="phan-nhap">
+            <!-- <div class="thongBaoLoi">Tài khoản hoặc mật khẩu không đúng!</div> -->
+            <label>
+                <b class="tenDangNhap-tieuDe">Tên đăng nhập</b>
+            </label>
+            <input type="text" placeholder="Nhập tên đăng nhập" name="username" required>
+            <label>
+                <b  class="matKhau-tieuDe">Mật khẩu</b>
+            </label>
+            <input type="password" placeholder="Nhập mật khẩu" name="password" required>
+            <button type="submit" class="nut-dangNhap">Đăng nhập</button>
+            <a class="quen-mat-khau" href="">Quên mật khẩu?</a>
+        </div>
+    </form>
+</body>
+</html>
