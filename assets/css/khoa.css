@@ -9,6 +9,13 @@ html{
     font-family: Helvetica, Arial, sans-serif;
 }
 
+.khoaMuc,
+.khoaMuc:hover {
+    padding-left: 20px;
+    margin-left: -20px;
+    background-color: var(--red-color);
+}
+
 .manHinhChinh{
     width: 100%;
     /* margin-left: 20%; */
