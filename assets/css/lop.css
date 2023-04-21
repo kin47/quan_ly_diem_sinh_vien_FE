@@ -2,12 +2,12 @@ button {
     border-radius: 5px;
 }
 
-.sinhVienMuc,
+/* .sinhVienMuc,
 .sinhVienMuc:hover {
     padding-left: 20px;
     margin-left: -20px;
     background-color: var(--red-color);
-}
+} */
 
 /* đầu trang */
 .dauTrang {
@@ -29,7 +29,7 @@ button {
 
 /* khu vực tìm kiếm */
 .khuVucTimKiem {
-    margin: 20px 20px;
+    margin: 10px 20px;
     border: 1px rgba(0, 0, 0, 0.3) solid;
     border-radius: 10px;
 }
@@ -107,7 +107,7 @@ button {
 
 /* table */
 .boc-bang {
-    width: 74vw;
+    width: 97.5vw;
     overflow-x: auto;
     padding: 10px 10px 15px 10px;
     margin-left: 10px;
