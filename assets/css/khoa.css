@@ -185,20 +185,20 @@ clear: both;
   position: absolute;
   top: 0;
   right: 0;
-  color: #fff;
-  padding: 12px;
+  color: #ffffff;
+  padding: 7px 12px;
   cursor: pointer;
   /* opacity: 0.8; */
 }
 
 .phanlop-close:hover{
   opacity: 1;
-  background-color: #fff;
+  background-color: aqua;
   color: #000;
 }
 .phanlop-header{
-  background: #009688;
-  height: 100px;
+  background: red;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content:center;
