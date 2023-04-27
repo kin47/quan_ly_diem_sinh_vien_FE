@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="../../../assets/themify-icons/themify-icons.css">
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/subject.css">
-    <link rel="stylesheet" href="./assets/css/add_student_form.css">
+    <link rel="stylesheet" href="./assets/css/add_subject_form.css">
     <link rel="stylesheet" href="./assets/css/pagination.css">
     <link rel="icon" type="image/x-icon" href="./assets/images/ptit.png">
 </head>
@@ -82,7 +82,7 @@
         <h1 class="tieuDeTrang">Danh sách môn học</h1>
         <div class="themVaTimKiem">
             <!-- nut them sinh vien -->
-            <button id="nut_them_MH" onclick="showModal('modal_sinh_vien')" class="nutThemMH js-nutThemMH"
+            <button id="nut_them_MH" onclick="showModal('modal_mon_hoc')" class="nutThemMH js-nutThemMH"
                 type="button">
                 <span class="nutThemMH_tieuDe">Thêm môn học</span>
                 <i class="fa-solid fa-plus"></i>
@@ -175,76 +175,59 @@
             <ul></ul>
         </div>
     </div>
-    <div class="boc-modal" id="modal_sinh_vien">
-        <div class="modal-container js-modal-container">
-            <div class="modal-close js-modal-close" onclick="hideModal('modal_sinh_vien')">
-                <i class="ti-close"></i>
+
+    <div class="boc-modal" id="modal_mon_hoc">
+        <div class="chua-modal ">
+            <div class="dong-modal" onclick="hideModal('modal_mon_hoc')">
+                <i id="dong-form-btn" class="ti-close"></i>
             </div>
             <!-- modal header -->
-            <header class="modal-header">
-                <i class="modal-heading-icon ti-user"></i>
+            <header class="dau-modal">
+                <i class="dau-modal-icon ti-pencil-alt"></i>
                 Thêm môn học
             </header>
             <!-- modal body -->
-            <div class="modal-body">
-                <label for="" class="modal-label">
-                    Mã môn học
-                </label>
-                <input type="text" class="modal-input" placeholder="Nhập mã ...">
-
-                <label for="" class="modal-label">
-                    Tên môn học
-                </label>
-                <input type="text" class="modal-input" placeholder="Nhập tên ...">
-
-                <label for="" class="modal-label">
-                    Email
-                </label>
-                <input type="email" class="modal-input" placeholder="Điền email .. ">
+            <div class="than-modal">
+                <label for="" class="nhan-hieu-modal">Mã môn học</label>
+                <input id="ma-mh" type="text" class="nhap-modal" placeholder="Nhập mã ...">
+                <div id="ma-mh-error" class="tb-loi-nhap">Mã môn học không được để trống </div>
 
 
-                <label for="" class="modal-label">
-                    Ngày sinh
-                </label>
-                <input type="date" class="modal-input">
 
-                <label for="" class="modal-label">
-                    Giới tính
-                </label>
-                <select class="modal-input" required>
+                <label for="" class="nhan-hieu-modal">Tên môn học</label>
+                <input id="ten-mh" type="text" class="nhap-modal" placeholder="Nhập tên ...">
+                <div id="ten-mh-error" class="tb-loi-nhap">Tên môn học không được để trống </div>
+
+                <label for="" class="nhan-hieu-modal">Số tín chỉ </label>
+                <select id="stc-mh" class="nhap-modal" required>
                     <option value="">Please select</option>
-                    <option value="Class A">Nam</option>
-                    <option value="Class B">Nữ</option>
+                    <option value="Class A">1</option>
+                    <option value="Class B">2</option>
+                    <option value="Class C">3</option>
                 </select>
+                <div id="stc-mh-error" class="tb-loi-nhap">Chọn số tín chỉ</div>
 
-                <label for="" class="modal-label">
-                    Số điện thoại
-                </label>
-                <input type="text" class="modal-input" placeholder="Nhập số điện thoại ...">
-
-
-
-                <label for="" class="modal-label">
-                    Lớp hành chính
-                </label>
-                <select id="" class="modal-input" required>
+                <label for="" class="nhan-hieu-modal">Mã khoa</label>
+                <select id="ma-khoa-mh" class="nhap-modal" required>
                     <option value="">Please select</option>
                     <option value="Class A">Class A</option>
                     <option value="Class B">Class B</option>
                     <option value="Class C">Class C</option>
                 </select>
+                <div id="ma-khoa-mh-error" class="tb-loi-nhap">Chọn mã khoa</div>
+
             </div>
             <!-- modal footer -->
-            <div class="modal-footer">
-                <button class="buy-btn">
-                    Thêm
-                </button>
+            <div class="cuoi-modal">
+                <button class="them-btn" type="submit" onclick="validateForm()">Thêm</button>
             </div>
         </div>
     </div>
+
     <script src="./assets/js/menu.js"></script>
-    <script src="./assets/js/text_error.js"></script>
     <script src="./assets/js/subject.js"></script>
+    <script src="./assets/js/add_subject.js"></script>
+    <script src="./assets/js/text_error_subject.js"></script>
     <script src="./assets/js/pagination_subject.js"></script>
 </body>
 
