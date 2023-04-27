@@ -41,8 +41,6 @@ html {
   margin-bottom: 20px;
   margin-top: 20px;
   font-weight: bold;
-  /* line-height: 74px; */
-  /* background-color: #000; */
 }
 
 .dau-noidung1 {
@@ -80,6 +78,7 @@ html {
   margin-top: 15px;
   border: none;
   border-radius: 50px;
+  text-align: center;
 }
 
 
