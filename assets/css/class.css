@@ -2,118 +2,90 @@ button {
     border-radius: 5px;
 }
 
-.khoaMuc,
-.khoaMuc:hover {
-    padding-left: 20px;
-    margin-left: -20px;
-    background-color: var(--red-color);
+.lop {
+    width: 100vw;
 }
 
-/* Modal */
-.phanlop{
-    position: fixed;
-    background-color: rgba(0,0,0,0.4);
-    top:0;
-    right:0;
-    left:0;
-    bottom:0;
-    /* display: none; */
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .phanlop.open{
-    display:flex;
-  }
-  .phanlop-container{
-    background-color: #fff;
-    width: 100%;
-    /* float: right; */
-    max-width: calc(100% -32px);
-    min-height: 100%;
-    position: relative;
-    animation: phanlopFadein ease 0.5s;
-  }
-  
-  .phanlop-close{
+.phanlop.open {
+    display: flex;
+}
+
+.phanlop-close {
     position: absolute;
     top: 0;
     right: 0;
     color: #000000;
-    /* padding: 7px 12px; */
     cursor: pointer;
-    /* opacity: 0.8; */
     display: flex;
     align-items: center;
     line-height: 60px;
     font-size: 20px;
     padding: 0 20px;
-  }
-  
-  .phanlop-close:hover{
+}
+
+.phanlop-close:hover {
     opacity: 1;
     background-color: #00EEEE;
     color: #fff;
     border-radius: 25px;
-  }
-  .phanlop-header{
+}
+
+.phanlop-header {
     background: rgb(245, 245, 220);
     height: 60px;
-    display: flex;
+    width: 100%;
     align-items: center;
-    /* justify-content:center; */
-    font-size:30px;
+    font-size: 30px;
     padding-left: 20px;
     color: #000000;
-    /* border-radius: 20px; */
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
-  }
-  .phanlop-heading-icon{
+    display: flex;
+    flex-direction: row;
+}
+
+.phanlop-heading-icon {
     margin-right: 16px;
-    /* margin-left: 16px; */
-  }
-  
-  .phanlop-body {
-    padding:16px;
-  }
-  
-  .phanlop-label{
+}
+
+.phanlop-body {
+    top: 60px;
+    padding: 16px;
+}
+
+.phanlop-label {
     display: block;
     font-size: 15px;
     margin-bottom: 10px;
-  }
-  
-  .phanlop-input{
+}
+
+.phanlop-input {
     border: 1px solid #ccc;
-    width:100%;
+    width: 100%;
     padding: 10px;
     font-size: 15px;
     margin-bottom: 24px;
-  }
- 
- 
-  
-  @keyframes phanlopFadein{
-    from{
-        transform:translateY(-200px);
+}
+
+
+
+@keyframes phanlopFadein {
+    from {
+        transform: translateY(-200px);
     }
-    to{
-        transform:translateX(0);
+
+    to {
+        transform: translateX(0);
     }
-  }
+}
 
 
 /* đầu trang */
-
 .dauTrang {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    /* margin: 10px 20px; */
     padding: 10px 20px;
     align-items: center;
-    /* background-color: red; */
-    /* border-bottom: #f9f5f5; */
     padding-left: 30px;
 }
 
@@ -122,9 +94,7 @@ button {
 }
 
 .nutThemlop {
-    /* height: 40px; */
     cursor: pointer;
- 
 }
 
 /* khu vực tìm kiếm */
@@ -223,7 +193,7 @@ button {
 }
 
 .cot-ngayTao {
-    width: 180px;
+    width: 160px;
 }
 
 .cot-tenlop,
@@ -231,10 +201,8 @@ button {
     width: 200px;
 }
 
-
-
 .hanh-dong {
-    width: 170px;
+    width: 150px;
 }
 
 .danhSach {
@@ -254,7 +222,6 @@ td {
 }
 
 /* sort cột */
-
 table th {
     position: relative;
 }
@@ -304,9 +271,20 @@ tr:nth-child(even) {
 
 .hop-hanh-dong-nut {
     font-size: 12px;
-    padding: 8px 12px;
+    padding: 8px 17px;
     color: var(--white-color);
     border: none;
+}
+
+.xem {
+    margin-bottom: 5px;
+    margin-right: 5px;
+    background-color: green;
+    border: none;
+}
+
+.xem:hover {
+    background-color: rgba(0, 128, 0, 0.8);
 }
 
 .sua {
@@ -335,26 +313,4 @@ tr:nth-child(even) {
 
 .xoa_tieuDe {
     margin-right: 5px;
-}
-
-
-/* đóng menu */
-.manHinhChinh.dongMenu .boc-bang {
-    width: 90vw;
-}
-
-@media screen and (max-width: 740px) {
-    .dauTrang {
-        flex-direction: column;
-    }
-    
-    .boc-bang {
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .boc-bang {
-        width: 100%;
-    }
 }
