@@ -2,20 +2,119 @@ button {
     border-radius: 5px;
 }
 
-/* .sinhVienMuc,
-.sinhVienMuc:hover {
+.khoaMuc,
+.khoaMuc:hover {
     padding-left: 20px;
     margin-left: -20px;
     background-color: var(--red-color);
-} */
+}
+
+/* Modal */
+.phanlop{
+    position: fixed;
+    background-color: rgba(0,0,0,0.4);
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+    /* display: none; */
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .phanlop.open{
+    display:flex;
+  }
+  .phanlop-container{
+    background-color: #fff;
+    width: 100%;
+    /* float: right; */
+    max-width: calc(100% -32px);
+    min-height: 100%;
+    position: relative;
+    animation: phanlopFadein ease 0.5s;
+  }
+  
+  .phanlop-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #000000;
+    /* padding: 7px 12px; */
+    cursor: pointer;
+    /* opacity: 0.8; */
+    display: flex;
+    align-items: center;
+    line-height: 60px;
+    font-size: 20px;
+    padding: 0 20px;
+  }
+  
+  .phanlop-close:hover{
+    opacity: 1;
+    background-color: #00EEEE;
+    color: #fff;
+    border-radius: 25px;
+  }
+  .phanlop-header{
+    background: rgb(245, 245, 220);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    /* justify-content:center; */
+    font-size:30px;
+    padding-left: 20px;
+    color: #000000;
+    /* border-radius: 20px; */
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+  }
+  .phanlop-heading-icon{
+    margin-right: 16px;
+    /* margin-left: 16px; */
+  }
+  
+  .phanlop-body {
+    padding:16px;
+  }
+  
+  .phanlop-label{
+    display: block;
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .phanlop-input{
+    border: 1px solid #ccc;
+    width:100%;
+    padding: 10px;
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+ 
+ 
+  
+  @keyframes phanlopFadein{
+    from{
+        transform:translateY(-200px);
+    }
+    to{
+        transform:translateX(0);
+    }
+  }
+
 
 /* đầu trang */
+
 .dauTrang {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 10px 20px;
+    /* margin: 10px 20px; */
+    padding: 10px 20px;
     align-items: center;
+    /* background-color: red; */
+    /* border-bottom: #f9f5f5; */
+    padding-left: 30px;
 }
 
 .tieuDeTrang {
@@ -23,8 +122,9 @@ button {
 }
 
 .nutThemlop {
-    height: 40px;
+    /* height: 40px; */
     cursor: pointer;
+ 
 }
 
 /* khu vực tìm kiếm */
@@ -107,13 +207,16 @@ button {
 
 /* table */
 .boc-bang {
-    width: 97.5vw;
+    width: 98vw;
     overflow-x: auto;
     padding: 10px 10px 15px 10px;
     margin-left: 10px;
 }
 
-
+.cot-gioiTinhlop,
+.cot-sdtlop {
+    width: 100px;
+}
 
 .cot-malop {
     width: 170px;
