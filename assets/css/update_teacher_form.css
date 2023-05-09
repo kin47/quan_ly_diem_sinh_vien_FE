@@ -121,8 +121,8 @@
 
 
 
-.dau-modal {
-    background: var(--red-color);
+.dau-modal-sua {
+    background: rgb(24, 170, 255);
     height: 120px;
     display: flex;
     align-items: center;
@@ -178,9 +178,9 @@
 
 
 
-.them-btn {
+.sua-btn {
     width: 100%;
-    background-color: var(--red-color);
+    background-color: rgb(24, 170, 255);
     color: #fff;
     padding: 18px;
     font-weight: bold;
@@ -188,7 +188,7 @@
     cursor: pointer;
 }
 
-.them-btn:hover {
+.sua-btn:hover {
     opacity: 0.7;
 }
 
@@ -206,7 +206,7 @@
     display: flex !important;
 }
 
-.tb-loi-nhap {
+.tb-loi-nhap-sua {
     display: none;
     color: red;
     margin: auto;

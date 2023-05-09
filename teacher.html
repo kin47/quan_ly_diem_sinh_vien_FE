@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/teacher.css">
     <link rel="stylesheet" href="./assets/css/add_teacher_form.css">
+    <link rel="stylesheet" href="./assets/css/update_teacher_form.css">
+    <link rel="stylesheet" href="./assets/css/confirm_delete_form.css">
     <link rel="stylesheet" href="./assets//css/pagination.css">
     <link rel="icon" type="image/x-icon" href="./assets/images/ptit.png">
 </head>
@@ -111,28 +113,6 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>TRR1</td>
-                        <td>Nguyễn Tất Thắng</td>
-                        <td>0986153247</td>
-                        <td>drnguyentt@ptit.edu.vn</td>
-                        <td>Nam</td>
-                        <td>Công nghệ thông tin</td>
-                        <td>06/04/2023 10:20:00</td>
-                        <td>06/04/2023 10:20:00</td>
-                        <td class="chucNang">
-                            <div class="hop-hanh-dong">
-                                <button class="sua hop-hanh-dong-nut" type="button">
-                                    <span class="sua_tieuDe">Sửa</span>
-                                    <i class="fa-solid fa-pencil sua_icon"></i>
-                                </button>
-                                <button class="xoa hop-hanh-dong-nut" type="button">
-                                    <span class="xoa_tieuDe">Xóa</span>
-                                    <i class="fa-solid fa-trash xoa_icon"></i>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
                         <td>OOP1</td>
                         <td>Trịnh Thị Vân Anh</td>
                         <td>0986153247</td>
@@ -143,55 +123,12 @@
                         <td>06/04/2023 10:20:00</td>
                         <td class="chucNang">
                             <div class="hop-hanh-dong">
-                                <button class="sua hop-hanh-dong-nut" type="button">
+                                <button class="sua hop-hanh-dong-nut" type="button"
+                                    onclick="showModalSua('modal_giang_vien_sua', 'OOP1', 'Trịnh Thị Vân Anh', '0986153247', 'vanhcodekoclean@ptit.edu.vn', 'Nữ', 'CNTT')">
                                     <span class="sua_tieuDe">Sửa</span>
                                     <i class="fa-solid fa-pencil sua_icon"></i>
                                 </button>
-                                <button class="xoa hop-hanh-dong-nut" type="button">
-                                    <span class="xoa_tieuDe">Xóa</span>
-                                    <i class="fa-solid fa-trash xoa_icon"></i>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>DSA11</td>
-                        <td>Nguyễn Mạnh Sơn</td>
-                        <td>0986153247</td>
-                        <td>sonowflake@ptit.edu.vn</td>
-                        <td>Nam</td>
-                        <td>Công nghệ thông tin</td>
-                        <td>06/04/2023 10:20:00</td>
-                        <td>06/04/2023 10:20:00</td>
-                        <td class="chucNang">
-                            <div class="hop-hanh-dong">
-                                <button class="sua hop-hanh-dong-nut" type="button">
-                                    <span class="sua_tieuDe">Sửa</span>
-                                    <i class="fa-solid fa-pencil sua_icon"></i>
-                                </button>
-                                <button class="xoa hop-hanh-dong-nut" type="button">
-                                    <span class="xoa_tieuDe">Xóa</span>
-                                    <i class="fa-solid fa-trash xoa_icon"></i>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>KNTT1</td>
-                        <td>Lê Vũ Điệp</td>
-                        <td>0986153247</td>
-                        <td>dieplv@ptit.edu.vn</td>
-                        <td>Nữ</td>
-                        <td>Truyền thông đa phương tiện</td>
-                        <td>06/04/2023 10:20:00</td>
-                        <td>06/04/2023 10:20:00</td>
-                        <td class="chucNang">
-                            <div class="hop-hanh-dong">
-                                <button class="sua hop-hanh-dong-nut" type="button">
-                                    <span class="sua_tieuDe">Sửa</span>
-                                    <i class="fa-solid fa-pencil sua_icon"></i>
-                                </button>
-                                <button class="xoa hop-hanh-dong-nut" type="button">
+                                <button class="xoa hop-hanh-dong-nut" type="button" onclick="hienXacNhanXoa('modal_xac_nhan_xoa', 'OOP1')">
                                     <span class="xoa_tieuDe">Xóa</span>
                                     <i class="fa-solid fa-trash xoa_icon"></i>
                                 </button>
@@ -206,10 +143,10 @@
         </div>
     </div>
 
-    <div class="boc-modal" id="modal_giang_vien" >
+    <div class="boc-modal" id="modal_giang_vien">
         <div class="chua-modal js-modal-container">
             <div class="dong-modal js-modal-close" onclick="hideModal('modal_giang_vien')">
-                <i id ="dong-form-btn" class="ti-close"></i>
+                <i id="dong-form-btn" class="ti-close"></i>
             </div>
             <!-- modal header -->
             <header class="dau-modal">
@@ -219,37 +156,37 @@
             <!-- modal body -->
             <div class="than-modal">
                 <label for="" class="nhan-hieu-modal">Mã giảng viên</label>
-                <input id ="ma-gv" type="text" class="nhap-modal" placeholder="Nhập mã ...">
+                <input id="ma-gv" type="text" class="nhap-modal" placeholder="Nhập mã ...">
                 <div id="ma-gv-error" class="tb-loi-nhap">Mã giảng viên không được để trống</div>
-    
-    
-    
+
+
+
                 <label for="" class="nhan-hieu-modal">Tên giảng viên</label>
-                <input id = "ten-gv" type="text" class="nhap-modal" placeholder="Nhập tên ...">
+                <input id="ten-gv" type="text" class="nhap-modal" placeholder="Nhập tên ...">
                 <div id="ten-gv-error" class="tb-loi-nhap">Tên giảng viên không được để trống</div>
-    
-    
+
+
                 <label for="" class="nhan-hieu-modal">Email</label>
                 <input id="email-gv" type="email" class="nhap-modal" placeholder="Điền email .. ">
                 <div id="email-gv-error" class="tb-loi-nhap">Email không được để trống</div>
-    
-    
+
+
                 <label for="" class="nhan-hieu-modal">Giới tính</label>
-                <select id = "gioi-tinh-gv" class="nhap-modal" required>
+                <select id="gioi-tinh-gv" class="nhap-modal" required>
                     <option value="">Please select</option>
                     <option value="Class A">Nam</option>
                     <option value="Class B">Nữ</option>
                 </select>
                 <div id="gioi-tinh-gv-error" class="tb-loi-nhap">Chọn giới tính </div>
-    
-    
+
+
                 <label for="" class="nhan-hieu-modal">Số điện thoại</label>
                 <input id="sdt-gv" type="text" class="nhap-modal" placeholder="Nhập số điện thoại ...">
                 <div id="sdt-gv-error" class="tb-loi-nhap">Số điện thoại không được để trống </div>
-    
-    
-    
-    
+
+
+
+
                 <label for="" class="nhan-hieu-modal">Mã khoa </label>
                 <select id="ma-khoa-gv" class="nhap-modal" required>
                     <option value="">Please select</option>
@@ -258,7 +195,7 @@
                     <option value="Class C">Class C</option>
                 </select>
                 <div id="ma-khoa-gv-error" class="tb-loi-nhap">Chọn mã khoa</div>
-    
+
             </div>
             <!-- modal footer -->
             <div class="cuoi-modal">
@@ -267,10 +204,109 @@
         </div>
     </div>
 
+    <!-- sửa giảng viên -->
+    <div class="boc-modal" id="modal_giang_vien_sua">
+        <div class="chua-modal js-modal-container">
+            <div class="dong-modal js-modal-close" onclick="hideModalSua('modal_giang_vien_sua')">
+                <i id="dong-form-btn-sua" class="ti-close"></i>
+            </div>
+            <!-- modal header -->
+            <header class="dau-modal-sua">
+                <i class="dau-modal-icon ti-user"></i>
+                Sửa giảng viên
+            </header>
+            <!-- modal body -->
+            <div class="than-modal">
+                <label for="" class="nhan-hieu-modal">Mã giảng viên</label>
+                <input id="ma-gv-sua" type="text" class="nhap-modal" placeholder="Nhập mã ...">
+                <div id="ma-gv-error-sua" class="tb-loi-nhap-sua">Mã giảng viên không được để trống</div>
+
+
+
+                <label for="" class="nhan-hieu-modal">Tên giảng viên</label>
+                <input id="ten-gv-sua" type="text" class="nhap-modal" placeholder="Nhập tên ...">
+                <div id="ten-gv-error-sua" class="tb-loi-nhap-sua">Tên giảng viên không được để trống</div>
+
+
+                <label for="" class="nhan-hieu-modal">Email</label>
+                <input id="email-gv-sua" type="email" class="nhap-modal" placeholder="Điền email .. ">
+                <div id="email-gv-error-sua" class="tb-loi-nhap-sua">Email không được để trống</div>
+
+
+                <label for="" class="nhan-hieu-modal">Giới tính</label>
+                <select id="gioi-tinh-gv-sua" class="nhap-modal" required>
+                    <option value="">Please select</option>
+                    <option value="Nam">Nam</option>
+                    <option value="Nữ">Nữ</option>
+                </select>
+                <div id="gioi-tinh-gv-error-sua" class="tb-loi-nhap-sua">Chọn giới tính </div>
+
+
+                <label for="" class="nhan-hieu-modal">Số điện thoại</label>
+                <input id="sdt-gv-sua" type="text" class="nhap-modal" placeholder="Nhập số điện thoại ...">
+                <div id="sdt-gv-error-sua" class="tb-loi-nhap-sua">Số điện thoại không được để trống </div>
+
+
+
+
+                <label for="" class="nhan-hieu-modal">Mã khoa </label>
+                <select id="ma-khoa-gv-sua" class="nhap-modal" required>
+                    <option value="">Please select</option>
+                    <option value="CNTT">Công nghệ thông tin</option>
+                    <option value="ATTT">An toàn thông tin</option>
+                    <option value="DPT">Đa phương tiện</option>
+                    <option value="MKT">Marketing</option>
+                    <option value="DTVT">Điện tử viễn thông</option>
+                    <option value="KTDT">Kĩ thuật điện tử</option>
+                    <option value="QTKD">Quản trị kinh doanh</option>
+                    <option value="TCKT">Tài chính kế toán</option>
+                    <option value="CB">Cơ bản</option>
+                </select>
+                <div id="ma-khoa-gv-error-sua" class="tb-loi-nhap-sua">Chọn mã khoa</div>
+
+            </div>
+            <!-- modal footer -->
+            <div class="cuoi-modal">
+                <button class="sua-btn" type="submit" onclick="validateFormSua()">Sửa</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- xóa giảng viên -->
+    <div class="boc-modal-xoa" id="modal_xac_nhan_xoa">
+        <div class="chua-modal-xoa">
+            <div class="dong-modal-xoa" onclick="anXacNhanXoa('modal_xac_nhan_xoa')">
+                <i id="dong-form-btn" class="ti-close"></i>
+            </div>
+            <!-- modal header -->
+            <header class="dau-modal-xoa">
+                <i class="dau-modal-icon ti-trash"></i>
+
+            </header>
+            <!-- modal body -->
+            <div class="than-modal-xoa">
+                Bạn có chắc chắn muốn xóa giảng viên <span id="textMa"></span> không?
+                <br>
+                Sau khi xóa bạn không thể khôi phục dữ liệu này.
+            </div>
+            <!-- modal footer -->
+            <div class="cuoi-modal-xoa">
+                <button onclick="anXacNhanXoa('modal_xac_nhan_xoa')" class="huy-btn" type="submit">
+                    Hủy
+                </button>
+                <button class="xoa-btn" type="submit" onclick="deleteGV(this)">
+                    Xóa
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script src="./assets/js/menu.js"></script>
     <script src="./assets/js/teacher.js"></script>
+    <script src="./assets/js/update_teacher.js"></script>
     <script src="./assets/js/pagination_teacher.js"></script>
-    <script src="./assets/js/add_teacher.js"></script>
+    <script src="./assets/js/add_form.js"></script>
+    <script src="./assets/js/confirm_delete_form.js"></script>
     <script src="./assets/js/text_error_teacher.js"></script>
 </body>
 
